@@ -1,0 +1,151 @@
+:root {
+  --bg: #ffffff;
+  --fg: #111111;
+  --muted: #8a8a8a;
+  --line: #e6e6e6;
+  --key: #f6f6f6;
+  --key-hover: #ececec;
+  --key-fg: #111111;
+  --accent-bg: #111111;
+  --accent-fg: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg: #111111;
+  --fg: #f2f2f2;
+  --muted: #8a8a8a;
+  --line: #262626;
+  --key: #1c1c1c;
+  --key-hover: #262626;
+  --key-fg: #f2f2f2;
+  --accent-bg: #f2f2f2;
+  --accent-fg: #111111;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Inter", "Helvetica Neue", -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.app {
+  width: min(360px, 92vw);
+  padding: 24px 0;
+  position: relative;
+}
+
+.theme {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--fg);
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.theme:hover {
+  background: var(--key);
+}
+
+.display {
+  padding: 56px 4px 20px;
+  border-bottom: 1px solid var(--line);
+  text-align: right;
+  min-height: 132px;
+}
+
+.expr {
+  font-size: 15px;
+  color: var(--muted);
+  min-height: 22px;
+  word-break: break-all;
+}
+
+.result {
+  font-size: 40px;
+  font-weight: 300;
+  letter-spacing: -0.5px;
+  margin-top: 8px;
+  word-break: break-all;
+}
+
+.result.error {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.keys button {
+  height: 56px;
+  border: none;
+  border-radius: 10px;
+  background: var(--key);
+  color: var(--key-fg);
+  font-size: 18px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.12s ease;
+}
+
+.keys button:hover {
+  background: var(--key-hover);
+}
+
+.keys button:active {
+  transform: scale(0.98);
+}
+
+.keys .op {
+  color: var(--fg);
+  font-size: 20px;
+}
+
+.keys .eq {
+  grid-column: 1 / -1;
+  height: 48px;
+  background: var(--accent-bg);
+  color: var(--accent-fg);
+  font-size: 20px;
+}
+
+.keys .eq:hover {
+  opacity: 0.88;
+  background: var(--accent-bg);
+}
+
+.keys .fn {
+  color: var(--muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

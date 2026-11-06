@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>计算器</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <button id="theme" class="theme" type="button" aria-label="切换明暗主题">◐</button>
+    <section class="display" aria-live="polite">
+      <div id="expr" class="expr"></div>
+      <div id="result" class="result">0</div>
+    </section>
+    <section class="keys">
+      <button data-key="C" class="fn">C</button>
+      <button data-key="back" class="fn">⌫</button>
+      <button data-key="(" class="fn">(</button>
+      <button data-key=")" class="fn">)</button>
+      <button data-key="7">7</button>
+      <button data-key="8">8</button>
+      <button data-key="9">9</button>
+      <button data-key="/" class="op">÷</button>
+      <button data-key="4">4</button>
+      <button data-key="5">5</button>
+      <button data-key="6">6</button>
+      <button data-key="*" class="op">×</button>
+      <button data-key="1">1</button>
+      <button data-key="2">2</button>
+      <button data-key="3">3</button>
+      <button data-key="-" class="op">−</button>
+      <button data-key="0">0</button>
+      <button data-key=".">.</button>
+      <button data-key="sign" class="fn">±</button>
+      <button data-key="+" class="op">+</button>
+      <button data-key="=" class="eq" type="button">=</button>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
