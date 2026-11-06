@@ -1,4 +1,4 @@
-const exprEl = document.getElementById("expr");
+﻿const exprEl = document.getElementById("expr");
 const resultEl = document.getElementById("result");
 const themeBtn = document.getElementById("theme");
 
@@ -78,7 +78,7 @@ async function evaluate() {
   clearError();
   exprEl.textContent = pretty(expr) + " =";
   try {
-    const resp = await fetch("/api/calc", {
+    const resp = await fetch("api/calc", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ expr }),
