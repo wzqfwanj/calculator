@@ -1,0 +1,9 @@
+# 追加到跳板机 8.133.209.25 的 /etc/caddy/Caddyfile 中 wkeeli.cn 站点块内，
+# 放在默认的 `reverse_proxy localhost:5000` 之前。
+#
+# 访问地址：https://wkeeli.cn/calc/
+
+redir /calc /calc/ 308
+handle_path /calc/* {
+	reverse_proxy http://180.76.180.249:8090
+}

@@ -1,4 +1,4 @@
-﻿const exprEl = document.getElementById("expr");
+const exprEl = document.getElementById("expr");
 const resultEl = document.getElementById("result");
 const themeBtn = document.getElementById("theme");
 
